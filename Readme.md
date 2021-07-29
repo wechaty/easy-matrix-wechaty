@@ -22,7 +22,7 @@ cd ./easy-matrix-wechaty
 
 # prepare environment variables.
 # You will need to specify appropriate values for follow variables:
-export HOST=localhost.localdomain4 # your domain name. See: <https://matrix-org.github.io/synapse/latest/federate.html> SYNAPSE_SERVER_NAME
+export HOST=localhost # your domain name. See: <https://matrix-org.github.io/synapse/latest/federate.html> SYNAPSE_SERVER_NAME
 export SYNAPSE_USER_NAME=test
 export SYNAPSE_USER_PASSWD=passwd
 
@@ -31,7 +31,7 @@ docker-compose run --rm -e SYNAPSE_SERVER_NAME=$HOST -e SYNAPSE_REPORT_STATS=yes
 
 # prepare matrix-appservice-wechaty config file
 sudo sh -c "echo \"domain: $HOST
-homeserverUrl: http://$HOST:8008
+homeserverUrl: http://synapse:8008
 registration: wechaty-registration.yaml\" > ./files/wechaty-config.yaml"
 
 # generate the config file of matrix bridge.
@@ -41,7 +41,7 @@ docker-compose run --rm matrix-appservice-wechaty --config /data/wechaty-config.
 sudo sed -e 's/#app_service_config_files/app_service_config_files/' -e '/app_service_config_files/a\  - \/data\/wechaty-registration.yaml' -i files/homeserver.yaml
 
 # run server
-docker-compose -f "synapse-wechaty/docker-compose.yml" up -d
+docker-compose -f "docker-compose.yml" up -d
 
 # create a synapse user
 docker-compose exec synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -u $SYNAPSE_USER_NAME -p $SYNAPSE_USER_PASSWD --no-admin
