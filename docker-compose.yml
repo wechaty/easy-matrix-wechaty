@@ -13,8 +13,6 @@ services:
       # - ./files:/data
       # - /path/to/ssd:/data/uploads
       # - /path/to/large_hdd:/data/media
-    depends_on: 
-      - matrix-appservice-wechaty
     ports:
       # - 8448:8448/tcp
       - 8008:8008/tcp
@@ -33,3 +31,5 @@ services:
       command: ["--config", "wechaty-config.yaml", "--file", "wechaty-registration.yaml"]
       # ports:
       #   - 8788:8788
+      depends_on: 
+        - synapse
