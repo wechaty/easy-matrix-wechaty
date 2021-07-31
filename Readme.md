@@ -15,6 +15,8 @@ docker-compose version 1.7.0 https://docs.docker.com/compose/install/
 
 ## Configuration and Deployment
 
+You can config you wechaty-puppet-token in `docker-compose.yml` for a better experience. There is guidance notes in the file.
+
 Please use the docker user to run the following commands.
 
 ```shell
@@ -25,7 +27,7 @@ cd ./easy-matrix-wechaty
 # Get the latest docker image of `wechaty/matrix-appservice:latest`.
 docker pull wechaty/matrix-appservice:latest
 
-chmod +x ./run.sh # You can modify the environment variables in the script for configuration, but if you can configure it, I don't think you need this script.
+chmod +x ./run.sh # You can modify the environment variables in the script for configuration. There is guidance notes in the file.
 
 ./run.sh
 ```
@@ -38,3 +40,19 @@ chmod +x ./run.sh # You can modify the environment variables in the script for c
 
 ## Other
 stop server: docker-compose down
+
+## Version
+
+### master
+
+### v0.2
+
+one-command deployment
+
+### v0.1
+
+muti-command deployment
+
+## Trouble Shoot
+
+- [A full instructions for starting from scratch. ](https://github.com/wechaty/matrix-appservice-wechaty/issues/89)
