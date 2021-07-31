@@ -22,6 +22,9 @@ Please use the docker user to run the following commands.
 git clone https://github.com/545641826/easy-matrix-wechaty
 cd ./easy-matrix-wechaty
 
+# Get the latest docker image of `wechaty/matrix-appservice:latest`.
+docker pull wechaty/matrix-appservice:latest
+
 chmod +x ./run.sh # You can modify the environment variables in the script for configuration, but if you can configure it, I don't think you need this script.
 
 ./run.sh
