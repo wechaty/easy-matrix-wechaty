@@ -27,23 +27,31 @@ cd ./easy-matrix-wechaty
 # Get the latest docker image of `wechaty/matrix-appservice:latest`.
 docker pull wechaty/matrix-appservice:latest
 
-chmod +x ./run.sh # You can modify the environment variables in the script for configuration. There is guidance notes in the file.
+# Deployment
+# You can modify the environment variables in the script for configuration. There is guidance notes in the file.
+sh install.sh
 
-./run.sh
+# start server
+bash start.sh
 ```
 
 ## Usage
 
 1. Visit [your matrix homepage](http://localhost:8008/_matrix/static/) to check if matrix is runing.
-2. Open any [Matrix client](https://matrix.org/docs/projects/try-matrix-now.html#clients),and to login with the homeserver(http://localhost:8008) and the user/password(test/passwd).
+2. Open any [Matrix client](https://matrix.org/docs/projects/try-matrix-now.html#clients),and to login with the homeserver(http://localhost:8008) and the user/password(test/passwd). Another optional web client is [element.wechaty.tk](https://element.wechaty.tk/#/login), which allows us to edit the target matrix homeserver.
 3. Add @wechaty:localhost and talk anythink to it, it will guide you to start the bridge.
 
 ## Other
-stop server: docker-compose down
+stop server: `bash stop.sh`
+uninstal:`bash uninstall.sh`
 
 ## Version
 
 ### master
+
+### v0.3
+
+add uninstall script
 
 ### v0.2
 

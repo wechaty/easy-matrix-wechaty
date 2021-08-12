@@ -5,6 +5,7 @@
 export HOST=localhost # your domain name. See: <https://matrix-org.github.io/synapse/latest/federate.html> SYNAPSE_SERVER_NAME
 export SYNAPSE_USER_NAME=test
 export SYNAPSE_USER_PASSWD=passwd
+mkdir ./files/
 
 # generate the config file of Synapse. ref:<https://github.com/matrix-org/synapse/blob/develop/docker/README.md#generating-a-configuration-file>
 docker-compose run --rm -e SYNAPSE_SERVER_NAME=$HOST -e SYNAPSE_REPORT_STATS=yes synapse generate
@@ -30,4 +31,6 @@ docker-compose -f "docker-compose.yml" up -d
 # create a synapse user
 docker-compose exec synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -u $SYNAPSE_USER_NAME -p $SYNAPSE_USER_PASSWD --no-admin
 
-docker-compose restart synapse # Avoid get no response when talking to @wechaty:localhost.(the bridge not work)
+# docker-compose restart synapse # Avoid get no response when talking to @wechaty:localhost.(the bridge not work)
+
+docker-compose down
