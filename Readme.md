@@ -53,7 +53,7 @@ uninstal:`bash uninstall.sh`
 
 ### Other Version
 
-see the [releases](/releases).
+see the [releases](../../releases).
 
 ## Trouble Shoot
 
