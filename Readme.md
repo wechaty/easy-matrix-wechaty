@@ -45,21 +45,15 @@ bash start.sh
 stop server: `bash stop.sh`
 uninstal:`bash uninstall.sh`
 
-## Version
+## Changelog
 
 ### master
 
-### v0.3
+-> v0.3
 
-add uninstall script
+### Other Version
 
-### v0.2
-
-one-command deployment
-
-### v0.1
-
-muti-command deployment
+see the [releases](/releases).
 
 ## Trouble Shoot
 
