@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+chmod 0755 *.sh
+
 # prepare environment variables.
 # You will need to specify appropriate values for follow variables:
 export HOST=localhost # your domain name. See: <https://matrix-org.github.io/synapse/latest/federate.html> SYNAPSE_SERVER_NAME

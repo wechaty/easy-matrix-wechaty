@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-echo stodocker-compose down
+echo docker-compose down
+docker-compose down

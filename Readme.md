@@ -32,7 +32,7 @@ docker pull wechaty/matrix-appservice:latest
 sh install.sh
 
 # start server
-bash start.sh
+./start.sh
 ```
 
 ## Usage
@@ -42,8 +42,10 @@ bash start.sh
 3. Add @wechaty:localhost and talk anythink to it, it will guide you to start the bridge.
 
 ## Other
-stop server: `bash stop.sh`
-uninstal:`bash uninstall.sh`
+- stop server: `./stop.sh`
+- uninstal: `./uninstall.sh`
+- restart: `./restart.sh`
+- clean: `./clean.sh`
 
 ## Changelog
 
