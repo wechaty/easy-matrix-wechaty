@@ -8,7 +8,8 @@ services:
       - SYNAPSE_CONFIG_PATH=/data/homeserver.yaml
     volumes:
       # You may either store all the files in a local folder
-      - ./files:/data
+      - ./data/synapse:/data
+      - ./data/wechaty:/wechaty
       # .. or you may split this between different storage points
       # - ./files:/data
       # - /path/to/ssd:/data/uploads
@@ -20,7 +21,7 @@ services:
   matrix-appservice-wechaty: # I tend to name it as birdge_0. ^_^
       image: wechaty/matrix-appservice:latest
       volumes:
-        - ./files:/data
+        - ./data/wechaty:/data
       environment:
         # The default setting is - WECHATY_PUPPET=wechaty-puppet-wechat
         - WECHATY_LOG=silly
@@ -29,7 +30,5 @@ services:
         # - WECHATY_PUPPET=wechaty-puppet-padlocal
         # - WECHATY_PUPPET_PADLOCAL_TOKEN=puppet_padlocal_xxx # your token
       command: ["--config", "wechaty-config.yaml", "--file", "wechaty-registration.yaml"]
-      # ports:
-      #   - 8788:8788
       depends_on: 
         - synapse
